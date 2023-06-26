@@ -75,13 +75,13 @@ public class starService {
 
     public List<star> getStarByNoteId(String noteId){
         QueryWrapper<star> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("noteId", noteId);
+        queryWrapper.eq("noteTitle", noteId);
         return starMapper.selectList(queryWrapper);
     }
 
     public long getStarCountByNoteId(String noteId){
         QueryWrapper<star> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("noteId", noteId);
+        queryWrapper.eq("noteTitle", noteId);
         return starMapper.selectCount(queryWrapper);
     }
     //查看是否收藏

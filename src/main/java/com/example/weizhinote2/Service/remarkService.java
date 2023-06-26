@@ -61,7 +61,7 @@ public class remarkService {
     public List<remark> getRemarkByNoteId(String noteId)
     {
         QueryWrapper<remark> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("noteId", noteId);
+        queryWrapper.eq("noteTitle", noteId);
         return remarkMapper.selectList(queryWrapper);
     }
 

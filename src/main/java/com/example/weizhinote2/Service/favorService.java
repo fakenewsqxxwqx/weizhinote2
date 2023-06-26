@@ -84,13 +84,13 @@ public class favorService {
     public long favorCount(String noteId)
     {
         QueryWrapper<favor> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("noteId",noteId);
+        queryWrapper.eq("noteTitle",noteId);
         return FavorMapper.selectCount(queryWrapper);
     }
 
     public List<favor> getFavorByNoteId(String noteId){
         QueryWrapper<favor> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("noteId", noteId);
+        queryWrapper.eq("noteTitle", noteId);
         return FavorMapper.selectList(queryWrapper);
     }
 }

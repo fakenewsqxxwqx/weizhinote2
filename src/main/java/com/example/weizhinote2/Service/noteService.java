@@ -162,4 +162,14 @@ public class noteService {
         queryWrapper.eq("userName",userName);
         return NoteMapper.selectList(queryWrapper);
     }
+
+    //社区获取所有公开笔记
+    public List<note> getPublicNote()
+    {
+        byte permission = 1;
+        QueryWrapper<note> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("permission",permission);
+        return NoteMapper.selectList(queryWrapper);
+    }
+
 }

@@ -85,4 +85,10 @@ public class layercontentService {
     }
 
      */
+    public List<layercontent> getLayerContentByNoteId(String noteId)
+    {
+        QueryWrapper<layercontent> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("noteTitle",noteId);
+        return LayercontentMapper.selectList(queryWrapper);
+    }
 }

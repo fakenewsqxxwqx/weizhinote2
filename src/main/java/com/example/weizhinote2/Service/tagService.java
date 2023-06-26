@@ -51,7 +51,7 @@ public class tagService {
 
     public List<tag> getTagByNoteId(String noteId){
         QueryWrapper<tag> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("noteId", noteId);
+        queryWrapper.eq("noteTitle", noteId);
         return tagMapper.selectList(queryWrapper);
     }
 

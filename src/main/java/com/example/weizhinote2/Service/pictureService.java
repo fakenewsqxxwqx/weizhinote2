@@ -51,7 +51,7 @@ public class pictureService {
 
     public List<picture> getPictureByNoteId(String noteId){
         QueryWrapper<picture> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("noteId", noteId);
+        queryWrapper.eq("noteTitle", noteId);
         return pictureMapper.selectList(queryWrapper);
     }
 }
