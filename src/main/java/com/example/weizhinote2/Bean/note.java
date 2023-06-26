@@ -1,5 +1,6 @@
 package com.example.weizhinote2.Bean;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
@@ -13,7 +14,7 @@ import java.util.Date;
 @Component
 @TableName("note")
 public class note extends Model<note> {
-    @TableId
+    @TableId(type = IdType.ASSIGN_ID)
     private String noteId;
     private String noteTitle;
     private int permission;
