@@ -78,8 +78,11 @@ public class layercontentService {
      */
 
     //getAllLayercontent
+    /*
     public List<layercontent> getAllLayerContent()
     {
         return LayercontentMapper.selectList(null);
     }
+
+     */
 }

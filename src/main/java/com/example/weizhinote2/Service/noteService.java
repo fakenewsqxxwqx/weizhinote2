@@ -117,11 +117,12 @@ public class noteService {
     //getNoteById
 
     //note
-    public note getNoteByNoteId(String noteId)
+    /*public note getNoteByNoteId(String noteId)
     {
        return NoteMapper.selectById(noteId);
     }
-
+     */
+/*
     //layercontent
     public List<layercontent> getLayerContentById(String layerContentId)
     {
