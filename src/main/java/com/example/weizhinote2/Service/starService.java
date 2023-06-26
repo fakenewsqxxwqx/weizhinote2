@@ -28,6 +28,8 @@ public class starService {
         this.noteMapper = noteMapper;
     }
 
+
+
     public boolean addStar(star star){
         String starId= IdWorker.getIdStr();
         star.setStarId(starId);
@@ -50,17 +52,12 @@ public class starService {
         starMapper.delete(queryWrapper);
     }
 
-    public List<star> getStarByNoteTitle(String noteTitle){
+    /*public List<star> getStarByNoteTitle(String noteTitle){
         QueryWrapper<star> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("noteTitle", noteTitle);
         return starMapper.selectList(queryWrapper);
     }
-
-    public long getStarCountByNoteTitle(String noteTitle){
-        QueryWrapper<star> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("noteTitle", noteTitle);
-        return starMapper.selectCount(queryWrapper);
-    }
+     */
 
     public List<note> getStarByUserName(String userName){
         QueryWrapper<star> queryWrapper = new QueryWrapper<>();
@@ -74,5 +71,40 @@ public class starService {
         QueryWrapper<note> queryWrapper1 = new QueryWrapper<>();
         queryWrapper1.in("noteTitle", noteTitleList);
         return noteMapper.selectList(queryWrapper1);
+    }
+
+    public List<star> getStarByNoteId(String noteId){
+        QueryWrapper<star> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("noteId", noteId);
+        return starMapper.selectList(queryWrapper);
+    }
+
+    public long getStarCountByNoteId(String noteId){
+        QueryWrapper<star> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("noteId", noteId);
+        return starMapper.selectCount(queryWrapper);
+    }
+    //查看是否收藏
+    public boolean checkStar(star star1)
+    {
+        QueryWrapper<star> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("userName",star1.getUserName());
+        long count = starMapper.selectCount(queryWrapper);
+        return count>0;
+    }
+
+    //star方法集成
+    public boolean starControl(star star1)
+    {
+        if(checkStar(star1))
+        {
+            deleteStar(star1.getStarId());
+            return false;
+        }
+        else
+        {
+            addStar(star1);
+            return true;
+        }
     }
 }

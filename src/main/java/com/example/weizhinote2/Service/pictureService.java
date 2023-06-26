@@ -41,9 +41,17 @@ public class pictureService {
         pictureMapper.delete(queryWrapper);
     }
 
+    /*
     public List<picture> getPictureByNoteTitle(String noteTitle){
         QueryWrapper<picture> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("noteTitle", noteTitle);
+        return pictureMapper.selectList(queryWrapper);
+    }
+     */
+
+    public List<picture> getPictureByNoteId(String noteId){
+        QueryWrapper<picture> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("noteId", noteId);
         return pictureMapper.selectList(queryWrapper);
     }
 }

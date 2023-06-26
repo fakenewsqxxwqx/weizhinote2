@@ -101,7 +101,7 @@ public class noteService {
 
     /*
     读取笔记，by noteId, byBookNameandUserName ,社区获取所有公开笔记
-     */
+
 
     //判断笔记是否存在
     public boolean isNoteExist(String noteId){
@@ -127,6 +127,8 @@ public class noteService {
     {
         return LayercontentMapper.selectList(new QueryWrapper<layercontent>().eq("layerContentId",layerContentId));
     }
+
+     */
 
     //ByBookName
 

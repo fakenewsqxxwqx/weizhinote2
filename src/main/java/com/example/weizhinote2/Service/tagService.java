@@ -41,9 +41,17 @@ public class tagService {
         tagMapper.delete(queryWrapper);
     }
 
+    /*
     public List<tag> getTagByNoteTitle(String noteTitle){
         QueryWrapper<tag> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("noteTitle", noteTitle);
+        return tagMapper.selectList(queryWrapper);
+    }
+     */
+
+    public List<tag> getTagByNoteId(String noteId){
+        QueryWrapper<tag> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("noteId", noteId);
         return tagMapper.selectList(queryWrapper);
     }
 

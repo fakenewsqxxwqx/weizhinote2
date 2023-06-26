@@ -7,6 +7,8 @@ import com.example.weizhinote2.Mapper.favorMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class favorService {
     private favorMapper FavorMapper;
@@ -84,5 +86,11 @@ public class favorService {
         QueryWrapper<favor> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("noteId",noteId);
         return FavorMapper.selectCount(queryWrapper);
+    }
+
+    public List<favor> getFavorByNoteId(String noteId){
+        QueryWrapper<favor> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("noteId", noteId);
+        return FavorMapper.selectList(queryWrapper);
     }
 }

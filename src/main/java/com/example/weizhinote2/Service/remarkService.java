@@ -49,9 +49,25 @@ public class remarkService {
         remarkMapper.update(remark, queryWrapper);
     }
 
+    /*
     public List<remark> getRemarkByNoteTitle(String noteTitle){
         QueryWrapper<remark> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("noteTitle", noteTitle);
+        return remarkMapper.selectList(queryWrapper);
+    }
+
+     */
+
+    public List<remark> getRemarkByNoteId(String noteId)
+    {
+        QueryWrapper<remark> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("noteId", noteId);
+        return remarkMapper.selectList(queryWrapper);
+    }
+
+    public List<remark> getRemarkByUserName(String userName){
+        QueryWrapper<remark> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("userName", userName);
         return remarkMapper.selectList(queryWrapper);
     }
 }

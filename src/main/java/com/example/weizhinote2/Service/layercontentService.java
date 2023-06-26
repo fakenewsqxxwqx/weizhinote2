@@ -68,13 +68,14 @@ public class layercontentService {
         return LayercontentMapper.selectList(queryWrapper);
     }
 
-    //getLayercontentByTitle
+    /*getLayercontentByTitle
     public List<layercontent> getLayerContentByTitle(layercontent layercontent1)
     {
         QueryWrapper<layercontent> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("noteTitle",layercontent1.getNoteTitle());
         return LayercontentMapper.selectList(queryWrapper);
     }
+     */
 
     //getAllLayercontent
     public List<layercontent> getAllLayerContent()
