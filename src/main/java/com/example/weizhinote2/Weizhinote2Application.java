@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.weizhinote2.mapper")
+@MapperScan("com.example.weizhinote2.Mapper")
 public class Weizhinote2Application {
 
     public static void main(String[] args) {

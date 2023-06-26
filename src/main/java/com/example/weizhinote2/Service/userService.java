@@ -76,6 +76,13 @@ public class userService {
     }
 
     public List<usr> getAllUsr(){
+        System.out.println("getAllUsr");
         return usrMapper.selectList(null);
+
+    }
+
+    public usr getUsrById(){
+        System.out.println("getUsrById");
+        return usrMapper.selectById("1132321");
     }
 }
