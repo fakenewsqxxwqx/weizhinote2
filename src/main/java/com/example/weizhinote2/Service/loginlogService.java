@@ -59,11 +59,19 @@ public class loginlogService {
         queryWrapper.eq("loginlogId", loginlog1.getLoginLogId());
         return LoginlogMapper.selectList(queryWrapper);
     }
-
+/*
     // getLoginLogByUsername
     public List<loginlog> getLoginLogByUserName(loginlog loginlog1){
         QueryWrapper<loginlog> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("userName", loginlog1.getUserName());
+        return LoginlogMapper.selectList(queryWrapper);
+    }
+
+ */
+
+    public List<loginlog> getLoginLogByUserName(String userName){
+        QueryWrapper<loginlog> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("userName", userName);
         return LoginlogMapper.selectList(queryWrapper);
     }
 

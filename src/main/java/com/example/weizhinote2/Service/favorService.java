@@ -69,12 +69,20 @@ public class favorService {
             return true;
         }
     }
-
+/*
     //点赞数量
     public long favorCount(favor favor1)
     {
         QueryWrapper<favor> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("favorId",favor1.getFavorId());
+        return FavorMapper.selectCount(queryWrapper);
+    }
+ */
+
+    public long favorCount(String noteId)
+    {
+        QueryWrapper<favor> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("noteId",noteId);
         return FavorMapper.selectCount(queryWrapper);
     }
 }
